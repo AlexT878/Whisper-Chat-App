@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo-area">
+                <h1>Whisper</h1>
+            </div>
+
+            <form role="search" class="search-bar">
+                <label for="global-search" class="sr-only">Search in conversation</label>
+                <input type="search" id="global-search" placeholder="Search...">
+                <button type="submit" aria-label="Search"></button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+
+            <nav class="user-actions" aria-label="User menu">
+                <button type="button" class="icon-btn-notifications" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="dot-badge" aria-label="New notifications"></span>
+                </button>
+                <button type="button" class="icon-btn-messages" aria-label="Messages">
+                    <i class="fa-regular fa-message"></i>
+                    <span class="dot-badge" id="messages" aria-label="New messages"></span>
+                </button>
+                <button type="button" class="profile-btn" aria-label="My profile">
+                    <img src="res/my_profilePicture.png" alt="User photo">
+                </button>
+            </nav>
+        </header>
+
+        <div class="content-wrapper">
+            <aside class="sidebar-history">
+                <header class="sidebar-header">
+                    <h2>Recent conversations</h2>
+                    <button type="button" aria-label="New conversation">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </header>
+                
+                <ul class="contact-list" role="list">
+                    <li class="contact-item active">
+                        <button type="button" aria-current="true">
+                            <div class="avatar">
+                                <img src="res/person1.png" alt="">
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-name">Andrei Popescu</span>
+                                <span class="last-message">Salut! Ce mai faci?</span>
+                            </div>
+                            <span class="timestamp">10:30</span>
+                        </button>
+                    </li>
+
+                    <li class="contact-item">
+                        <button type="button">
+                            <div class="avatar">
+                                <img src="res/person2.png" alt="">
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-name">Maria Ionescu</span>
+                                <span class="last-message">Ok</span>
+                            </div>
+                            <span class="timestamp">Ieri</span>
+                        </button>
+                    </li>
+                    
+                    <li class="contact-item">
+                        <button type="button">
+                            <div class="avatar">
+                                <img src="res/person3.png" alt="">
+                            </div>
+                            <div class="contact-info">
+                                <span class="contact-name">Echipa proiect</span>
+                                <span class="last-message">Meeting la ora 14:00.</span>
+                            </div>
+                            <span class="timestamp">Lun</span>
+                        </button>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="chat-window">
+                <header class="chat-header">
+                    <div class="chat-partner-info">
+                        <img src="res/person1.png" alt="" aria-hidden="true">
+                        <div>
+                            <h2>Andrei Popescu</h2>
+                            <span class="status online" aria-label="Status: Online">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button type="button" aria-label="Video call">
+                            <i class="fa-solid fa-video"></i>
+                        </button>
+                        <button type="button" aria-label="Phone call">
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+                        <span class = "vertical-bar" style="color: gray;">|</span>
+                        <button type="button" aria-label="Search messages">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="messages-container" role="log" aria-live="polite" aria-label="History">
+                    
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Salut! Ce mai faci?</p>
+                        </div>
+                        <span class="message-time">10:28</span>
+                    </div>
+
+                    <div class="message-sent">
+                        <div class="message-content">
+                            <p>Salut Andrei! Bine.</p>
+                        </div>
+                        <span class="message-time">10:29</span>
+                    </div>
+
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Suna bine!</p>
+                        </div>
+                        <span class="message-time">10:30</span>
+                    </div>
+                </div>
+
+                <footer class="chat-input-area">
+                    <form action="#" method="post">
+                        <button type="button" aria-label="Add attachment">
+                            <i class="fa-solid fa-paperclip"></i>
+                        </button>
+                        <button type="button" aria-label="Add emoji">
+                            <i class="fa-regular fa-face-grin-tongue-wink"></i>
+                        </button>
+                        
+                        <label for="message-input" class="sr-only">Type a message</label>
+                        <textarea id="message-input" name="message" rows="1" placeholder="Type a message"></textarea>
+                        <button type="submit" aria-label="Send">
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
