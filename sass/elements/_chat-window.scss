@@ -78,11 +78,11 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
-.message.received {
+.message-received {
     align-self: flex-start;
 }
 
-.message.received .message-content {
+.message-received .message-content {
     background-color: #fff;
     color: var(--text-primary);
     border-bottom-left-radius: 4px;
