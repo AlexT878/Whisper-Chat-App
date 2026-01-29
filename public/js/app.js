@@ -1,6 +1,8 @@
 import { Message } from './message.js';
 import { displayMessage } from './ui.js';
 
+const socket = io();
+
 const sendMessageForm = document.querySelector('.chat-input-area form');
 const messageInput = document.getElementById('message-input');
 
