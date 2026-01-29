@@ -1,8 +1,9 @@
 export class Message {
-    constructor(text) {
+    constructor(text, source) {
         this.text = text;
         let now = new Date();
         this.timestamp = this.#formatTime(now);
+        this.source = source;
     }
 
     #formatTime(time) {
