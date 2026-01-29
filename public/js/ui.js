@@ -1,4 +1,5 @@
 const messageContainer = document.querySelector('.messages-container');
+const profilePicture = document.querySelector('.profile-btn img');
 
 export function displayMessage(message, type) {
     const messageDiv = document.createElement('div');
@@ -15,3 +16,7 @@ export function displayMessage(message, type) {
     messageContainer.appendChild(messageDiv);
     messageContainer.scrollTop = messageContainer.scrollHeight;
 } 
+
+export function renderMyProfile(user) {
+    profilePicture.src = user.avatar;
+}

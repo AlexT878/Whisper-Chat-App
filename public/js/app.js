@@ -1,9 +1,15 @@
 import { Message } from './message.js';
-import { displayMessage } from './ui.js';
+import { displayMessage, renderMyProfile } from './ui.js';
 import { socketService } from './socket-service.js'
+import { findUser } from './users.js'
 
 const sendMessageForm = document.querySelector('.chat-input-area form');
 const messageInput = document.getElementById('message-input');
+
+const username = prompt("What's your name?");
+const currentUser = findUser(username);
+renderMyProfile(currentUser);
+
 
 sendMessageForm.addEventListener('submit', function(event) {
     event.preventDefault();
