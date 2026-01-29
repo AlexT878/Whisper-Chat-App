@@ -1,7 +1,6 @@
 import { Message } from './message.js';
 import { displayMessage } from './ui.js';
-
-const socket = io();
+import { socketService } from './socket-service.js'
 
 const sendMessageForm = document.querySelector('.chat-input-area form');
 const messageInput = document.getElementById('message-input');
@@ -11,14 +10,11 @@ sendMessageForm.addEventListener('submit', function(event) {
 
     let text = messageInput.value;
     messageInput.value = "";
-    console.log(text);
 
     if(text != "") {
         let message = new Message(text);
         displayMessage(message, 'sent');
-
-        let messageR = new Message("Ok");
-        displayMessage(messageR, 'received');
+        socketService.sendMessage(message);
     }
 })
 
@@ -27,4 +23,8 @@ messageInput.addEventListener('keydown', function(event) {
         event.preventDefault();
         sendMessageForm.requestSubmit();
     }
+})
+
+socketService.onMessageReceived((data) => {
+    displayMessage(data, "received");
 })
