@@ -1,0 +1,45 @@
+.chat-input-area {
+    font-family: inherit;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.chat-input-area form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-input-area textarea {
+    font-family: inherit;
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 24px;
+    background-color: var(--bg-app);
+    resize: none;
+    outline: none;
+    border: 1px solid transparent;
+    max-height: 100px;
+    transition: all 0.2s;
+}
+
+.chat-input-area textarea:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+}
+
+.chat-input-area button[type="submit"] {
+    color: var(--primary-color);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.chat-input-area button[type="button"] {
+    color: rgb(73, 73, 73);
+    padding: 4px;
+}
+
+.chat-input-area button[type="submit"]:hover {
+    background-color: rgba(0, 120, 255, 0.1);
+}

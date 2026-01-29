@@ -1,0 +1,13 @@
+@mixin flex-layout($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin notification-icon-setup($align-left: false) {
+    @if $align-left {
+        padding-left: 5px;
+    } @else {
+        padding-right: 5px;
+    }
+}
